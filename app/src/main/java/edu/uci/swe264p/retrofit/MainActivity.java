@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         btnMovieList.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MovieListActivity.class);
-
+                intent.putExtra("BASE_URL", BASE_URL);
+                intent.putExtra("API_KEY", API_KEY);
                 startActivity(intent);
             }
         });

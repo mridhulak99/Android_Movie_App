@@ -27,11 +27,14 @@ public class MovieListActivity extends AppCompatActivity {
     static final String TAG = MovieListActivity.class.getSimpleName();
     private RecyclerView recyclerView;
     private List<Movie> movieslist = new ArrayList<>();
-    static final String BASE_URL = "https://api.themoviedb.org/3/";
-    final static String API_KEY = "6f7dd867c3bcbc231d44f69b64058582";
+    static String BASE_URL = "";
+    static String API_KEY = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle extras = getIntent().getExtras();
+        BASE_URL = extras.getString("BASE_URL");
+        API_KEY = extras.getString("API_KEY");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_list);
